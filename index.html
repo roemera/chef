@@ -20,20 +20,12 @@
     </head>
     <body>
 
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12 col-centered">
-                    <a class="btn connectButton">Connect</a>
-                    <div id="message"></div>
-
-                </div>
+        <div class="app">
+            <div id="ui">
+                <button id="connectButton">Connect</button>
             </div>
-
+            <div id="message">Hello.</div>
         </div>
-        <!-- /container -->
-
 
         <script>
 
@@ -49,7 +41,6 @@
             var app = {
                 macAddress: "00:14:01:10:27:78",  // get your mac address from bluetoothSerial.list
                 chars: "",
-                connectButton: $(".connectButton"),
 
                 /*
                  Application constructor
@@ -63,7 +54,7 @@
                  */
                 bindEvents: function () {
                     document.addEventListener('deviceready', this.onDeviceReady, false);
-                    app.connectButton.addEventListener('touchend', app.manageConnection, false);
+                    connectButton.addEventListener('touchend', app.manageConnection, false);
                 },
 
                 /*
@@ -139,7 +130,7 @@
                     // if you get a good Bluetooth serial connection:
                     app.display("Connected to: " + app.macAddress);
                     // change the button's name:
-                    app.connectButton.innerHTML = "Disconnect";
+                    connectButton.innerHTML = "Disconnect";
                     // set up a listener to listen for newlines
                     // and display any new data that's come in since
                     // the last newline:
@@ -156,7 +147,7 @@
                     // if you get a good Bluetooth serial connection:
                     app.display("Disconnected from: " + app.macAddress);
                     // change the button's name:
-                    app.connectButton.innerHTML = "Connect";
+                    connectButton.innerHTML = "Connect";
                     // unsubscribe from listening:
                     bluetoothSerial.unsubscribe(
                             function (data) {
