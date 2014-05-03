@@ -17,6 +17,7 @@
         Alex Roemer
     </author>
 
+    <preference name="phonegap-version" value="3.0.0" />
     <gap:platform name="android" />
     <gap:plugin name="com.megster.cordova.bluetoothserial" version="0.2.0" />
 
