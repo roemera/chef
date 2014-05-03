@@ -17,8 +17,9 @@
         Alex Roemer
     </author>
 
-    <preference name="phonegap-version" value="3.0.0" />
+    <preference name="phonegap-version" value="3.3.0" />
+    <preference name="orientation" value="portrait" />
     <gap:platform name="android" />
-    <gap:plugin name="com.megster.cordova.bluetoothserial" version="0.2.0" />
+    <gap:plugin name="com.tomvanenckevort.cordova.bluetoothserial" />
 
 </widget>
